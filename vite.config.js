@@ -17,6 +17,6 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  base: '/Social-Designer-Introduction/dist/',
-  // base: '/',
+  // base: '/Social-Designer-Introduction/dist/',
+  base: '/',
 })

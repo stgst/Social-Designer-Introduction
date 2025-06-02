@@ -23,7 +23,7 @@
             </form>
             <div class="flex items-center justify-center">
                 <input id="link-radio" 
-                       type="radio" 
+                       type="checkbox" 
                        v-model="isAgreed"
                        value="agreed"
                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">

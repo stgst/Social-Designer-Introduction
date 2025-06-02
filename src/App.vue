@@ -2,6 +2,7 @@
 import { ref, computed, provide } from 'vue'
 import Home from '@/components/Home.vue'
 import Intro from '@/components/Intro.vue'
+import Form from '@/components/Form.vue'
 </script>
 
 <template>
@@ -11,7 +12,7 @@ import Intro from '@/components/Intro.vue'
   <div class=" relative min-h-screen z-10">
     <Home />
     <Intro />
-    <Intro />
+    <Form />
   </div>
 
 </template>

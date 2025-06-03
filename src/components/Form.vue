@@ -1,5 +1,5 @@
 <template>
-    <div id="title" class="text-white flex justify-center h-screen items-center">
+    <div id="title" class="relative z-10 text-white flex justify-center items-center">
         <div class="mx-auto px-4 py-14 w-xs md:w-md text-center text-lg">
             <br><br>
             <span class="text-2xl font-semibold">讓你的故事被看見</span><br><br>
@@ -34,7 +34,7 @@
                        value="agreed"
                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                 <label for="link-radio" class="ms-2 text-sm font-medium text-white">
-                    勾選並同意<a href="#" class="text-blue-400 hover:underline">使用條款</a>
+                    勾選並同意<button @click="handleShowModal" class="text-blue-400 hover:cursor-pointer ">使用條款</button>
                 </label>
             </div>
             <br><br>
@@ -43,14 +43,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 
-const isAgreed = ref('')
+const isAgreed = defineModel('isAgreed', {
+    type: Boolean,
+    default: false
+})
 
-const handleRadioChange = () => {
-    // radio button 不需要額外的 change handler
-    // v-model 會自動處理狀態
+const emit = defineEmits(['openModal'])
+
+const handleShowModal = () => {
+    emit('openModal')
 }
+
 </script>
 
 <style>

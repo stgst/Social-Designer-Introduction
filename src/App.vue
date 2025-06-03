@@ -1,8 +1,32 @@
-<script setup>
-import { ref, computed, provide } from 'vue'
+<script>
 import Home from '@/components/Home.vue'
 import Intro from '@/components/Intro.vue'
 import Forms from '@/components/Form.vue'
+import Notice from '@/components/Notice.vue'
+
+export default {
+  name: 'app',
+  components: {
+    Home,
+    Intro,
+    Forms,
+    Notice
+  },
+  data () {
+    return {
+      isModalVisible: false,
+    };
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    }
+  },
+};
+
 </script>
 
 <template>
@@ -13,7 +37,10 @@ import Forms from '@/components/Form.vue'
     <Home />
     <Intro />
     <Intro />
-    <Forms />
+    <div class="relative z-20 flex items-center justify-center h-screen">
+      <Forms class="relative z-10" @openModal="showModal"/>
+      <Notice class="absolute" v-show="isModalVisible" :isModalVisible="isModalVisible" @close="closeModal"/>
+    </div>
   </div>
 
 </template>
@@ -21,6 +48,5 @@ import Forms from '@/components/Form.vue'
 <style>
 #bg {
   background-image: url('@/assets/img/bg.jpg');
-  /* 用 @ 指定 Vite 的靜態路徑 */
 }
 </style>

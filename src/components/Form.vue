@@ -9,7 +9,8 @@
                         <label for="comment" class="sr-only">寫下你的故事</label>
                         <textarea id="comment" name="comment" v-model="comment" rows="10"
                             class="w-full px-0 text-sm text-gray-900 bg-transparent border-0 focus:ring-0 focus:outline-none"
-                            placeholder="寫下你的故事" required></textarea>
+                            placeholder="有些痛，不會自己好。寫下來，也是一種療癒。
+請與我們分享你曾經經歷的數位性暴力。你可以談感受、經過、疑問，或者只是一句話也沒關係。" required></textarea>
                     </div>
                     <div class="flex items-center justify-center px-3 py-2">
                         <button id="submitBtn" type="submit" :disabled="!isAgreed" :class="[
@@ -50,11 +51,18 @@ const handleShowModal = () => {
 const comment = ref('')
 
 const submitFunc = () => {
+
+    if(comment.value.length < 50){
+        alert('我們期待您分享更多的故事，請至少輸入 50 個字。')
+        return
+    }
+
     var submitBtn = document.getElementById('submitBtn')
     submitBtn.textContent = '提交中...'
     isAgreed.value = false
 
-    var url = "https://script.google.com/macros/s/AKfycbzIqLQyr_xsshA-idgUDZAHVDq6FpKbiSQTXV2ckTuXuL7Zf2H02EnTyAvYu-O8eSp3/exec"
+    var url = import.meta.env.VITE_URL
+
     fetch(url, {
         method: 'POST',
         headers: {

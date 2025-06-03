@@ -18,5 +18,4 @@ export default defineConfig({
     },
   },
   base: '/Social-Designer-Introduction/dist/',
-  // base: '/',
 })

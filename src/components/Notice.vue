@@ -2,9 +2,9 @@
     <div id="title" class="text-white flex justify-center items-center animate__animated animate__fadeIn">
         <div class="mx-auto px-4 w-xs md:w-md text-center text-lg">
             <br><br>
-            <div class="bg-white shadow-lg rounded-xl p-10 text-black text-left">
+            <div class="bg-white shadow-lg rounded-xl p-6 text-black text-left">
                 <div class="flex justify-between mb-6">
-                    <h1 class="text-2xl font-bold text-center">注意事項</h1>
+                    <h1 class="text-2xl font-bold text-center">隱私權保護聲明</h1>
                     <button @click="$emit('close')" class="hover:cursor-pointer">
                         <svg class="w-6 h-6 text-gray-800 dark:text-white " aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

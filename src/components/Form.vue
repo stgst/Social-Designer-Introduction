@@ -34,7 +34,7 @@
                        value="agreed"
                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                 <label for="link-radio" class="ms-2 text-sm font-medium text-white">
-                    勾選並同意<button @click="handleShowModal" class="text-blue-400 hover:cursor-pointer ">使用條款</button>
+                    勾選並同意<button @click="handleShowModal" class="text-blue-400 hover:cursor-pointer ">隱私權保護聲明</button>
                 </label>
             </div>
             <br><br>

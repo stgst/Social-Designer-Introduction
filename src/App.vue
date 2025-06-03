@@ -12,7 +12,7 @@ export default {
     Forms,
     Notice
   },
-  data () {
+  data() {
     return {
       isModalVisible: false,
       introSections: [
@@ -23,6 +23,10 @@ export default {
         {
           title: '我們想聽見你的聲音',
           content: '在面對數位性暴力的經驗中，很多人選擇沉默，不是因為不痛，而是因為不知道可以說給誰聽。這裡是一個安全的空間，我們相信——每一段經歷都值得被理解、被記錄、被看見。<br><br>你可以選擇匿名、隱去細節，我們會小心保護每個字句。你的故事，不只是你的傷口，更是未來改變的開始。'
+        },
+        {
+          title: '有「性」可談',
+          content: '我們是由 3 位大學生與 1 位高中生組成的 Social Designer 參賽團隊，關注數位性別暴力與其背後的結構性不平等。我們看見在看似輕微的點擊、轉傳與沉默背後，潛藏著對受害者長遠且深刻的傷害。本專案〈留下來的不止影像〉，旨在透過互動體驗與情境設計，引導大眾深入瞭解數位性別暴力，透過倡議行動增加人們對「轉傳」與「旁觀」等行為的重視，喚起更多人對數位性別正義的關注與行動。'
         }
       ]
     };
@@ -45,15 +49,10 @@ export default {
 
   <div class="relative min-h-screen z-10">
     <Home />
-    <Intro 
-      v-for="(section, index) in introSections" 
-      :key="index"
-      :title="section.title"
-      :content="section.content"
-    />
+    <Intro v-for="(section, index) in introSections" :key="index" :title="section.title" :content="section.content" />
     <div class="relative z-20 flex items-center justify-center h-screen">
-      <Forms class="relative z-10" @openModal="showModal"/>
-      <Notice class="absolute" v-show="isModalVisible" :isModalVisible="isModalVisible" @close="closeModal"/>
+      <Forms class="relative z-10" @openModal="showModal" />
+      <Notice class="absolute" v-show="isModalVisible" :isModalVisible="isModalVisible" @close="closeModal" />
     </div>
   </div>
 </template>

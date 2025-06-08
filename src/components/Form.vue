@@ -61,7 +61,7 @@ const submitFunc = () => {
     submitBtn.textContent = '提交中...'
     isAgreed.value = false
 
-    var url = import.meta.env.VITE_URL
+    var url = "https://script.google.com/macros/s/AKfycbzIqLQyr_xsshA-idgUDZAHVDq6FpKbiSQTXV2ckTuXuL7Zf2H02EnTyAvYu-O8eSp3/exec"
 
     fetch(url, {
         method: 'POST',
